@@ -15,8 +15,7 @@ import plg.model.data.IDataObjectOwner.DATA_OBJECT_DIRECTION;
 import plg.model.event.EndEvent;
 import plg.model.event.StartEvent;
 import plg.model.gateway.Gateway;
-import plg.visualizer.BPMNVisualizer;
-import plg.visualizer.BPMNVisualizer2;
+import plg.visualizer.GraphvizBPMNVisualizer;
 
 public class PlgVisualizerPrototype {
 
@@ -24,7 +23,7 @@ public class PlgVisualizerPrototype {
 		Process p = new Process("test");
 //		p = generateProcess();
 		ProcessGenerator.randomizeProcess(p, RandomizationConfiguration.BASIC_VALUES);
-		BPMNVisualizer2 v = new BPMNVisualizer2(p);
+		GraphvizBPMNVisualizer v = new GraphvizBPMNVisualizer(p);
 		
 		JFrame f = new JFrame("Test Frame");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

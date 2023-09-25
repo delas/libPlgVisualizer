@@ -28,7 +28,7 @@ import javax.swing.*;
  * 
  * @author Andrea Burattin
  */
-public class BPMNVisualizer2 extends DotPanel {
+public class GraphvizBPMNVisualizer extends DotPanel {
 
 	private static final long serialVersionUID = -8441909033110442685L;
 	protected Set<TaskListener> activityListeners = new HashSet<TaskListener>();
@@ -40,7 +40,7 @@ public class BPMNVisualizer2 extends DotPanel {
 	 * 
 	 * @param process the process graph to show
 	 */
-	public BPMNVisualizer2(Process process) {
+	public GraphvizBPMNVisualizer(Process process) {
 		super(new DotModel(process));
 
 		this.process = process;
@@ -72,7 +72,6 @@ public class BPMNVisualizer2 extends DotPanel {
 	private void configureListeners() {
 		DotModel dotModel = (DotModel) getDot();
 		for (final Task task : process.getTasks()) {
-			System.out.println(task.getId() + " -> " + task.getName());
 			dotModel.getNode(task.getId()).addMouseListener(new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent e) {
